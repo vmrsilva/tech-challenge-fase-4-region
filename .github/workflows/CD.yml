@@ -41,4 +41,4 @@ jobs:
         context: ./
         file: ./TechChallenge.Region.Api/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/tech-challenge-region:latest, ${{ secrets.DOCKERHUB_USERNAME }}/tech-challenge-region:${{ github.run_number }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/tech-challenge-region-fase4:latest, ${{ secrets.DOCKERHUB_USERNAME }}/tech-challenge-region:${{ github.run_number }}
