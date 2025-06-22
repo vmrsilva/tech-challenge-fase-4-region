@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Region.Api", "TechChallenge.Region.Api\TechChallenge.Region.Api.csproj", "{AE10ECE0-75DB-4918-A20B-697E3E23436B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallenge.Region.Api", "TechChallenge.Region.Api\TechChallenge.Region.Api.csproj", "{AE10ECE0-75DB-4918-A20B-697E3E23436B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Region.Domain", "TechChallenge.Region.Domain\TechChallenge.Region.Domain.csproj", "{18D8C4CB-0EC4-4D2F-9DF8-01440ECE80D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallenge.Region.Domain", "TechChallenge.Region.Domain\TechChallenge.Region.Domain.csproj", "{18D8C4CB-0EC4-4D2F-9DF8-01440ECE80D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Region.Infrastructure", "TechChallenge.Region.Infrastructure\TechChallenge.Region.Infrastructure.csproj", "{638AF7EF-BDE2-40ED-B874-AB4037F80AEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallenge.Region.Infrastructure", "TechChallenge.Region.Infrastructure\TechChallenge.Region.Infrastructure.csproj", "{638AF7EF-BDE2-40ED-B874-AB4037F80AEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Region.IoC", "TechChallenge.Region.IoC\TechChallenge.Region.IoC.csproj", "{270B4C5D-5CAB-44B6-957F-C4BA9D1812DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallenge.Region.IoC", "TechChallenge.Region.IoC\TechChallenge.Region.IoC.csproj", "{270B4C5D-5CAB-44B6-957F-C4BA9D1812DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallenge.Region.Tests", "TechChallenge.Region.Tests\TechChallenge.Region.Tests.csproj", "{54B91F0C-B6EE-483C-A3A0-5429C1A853D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallenge.Region.Tests", "TechChallenge.Region.Tests\TechChallenge.Region.Tests.csproj", "{54B91F0C-B6EE-483C-A3A0-5429C1A853D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallange.Common", "TechChallange.Common\TechChallange.Common.csproj", "{C8923882-C8FF-4C80-8233-FE4BE494485E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{54B91F0C-B6EE-483C-A3A0-5429C1A853D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54B91F0C-B6EE-483C-A3A0-5429C1A853D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54B91F0C-B6EE-483C-A3A0-5429C1A853D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8923882-C8FF-4C80-8233-FE4BE494485E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8923882-C8FF-4C80-8233-FE4BE494485E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8923882-C8FF-4C80-8233-FE4BE494485E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8923882-C8FF-4C80-8233-FE4BE494485E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MassTransit;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TechChallange.Common.MessagingService;
 using TechChallenge.Region.Domain.Base.Repository;
 using TechChallenge.Region.Domain.Cache;
 using TechChallenge.Region.Domain.Region.Repository;
@@ -20,6 +22,7 @@ namespace TechChallenge.Region.IoC
             ConfigureBase(services);
             ConfigureRegion(services);
             ConfigureCache(services, configuration);
+            ConfigureMessagingService(services, configuration);
         }
 
         public static void ConfigureContext(IServiceCollection services, IConfiguration configuration)
@@ -29,7 +32,7 @@ namespace TechChallenge.Region.IoC
             using (var serviceProvider = services.BuildServiceProvider())
             {
                 var dbContext = serviceProvider.GetRequiredService<TechChallangeContext>();
-               // dbContext.Database.Migrate();
+                // dbContext.Database.Migrate();
             }
         }
 
@@ -45,12 +48,37 @@ namespace TechChallenge.Region.IoC
 
         public static void ConfigureCache(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddStackExchangeRedisCache(options => {
+            services.AddStackExchangeRedisCache(options =>
+            {
                 options.InstanceName = nameof(CacheRepository);
                 options.Configuration = configuration.GetConnectionString("Cache");
             });
             services.AddScoped<ICacheRepository, CacheRepository>();
             services.AddScoped<ICacheWrapper, CacheWrapper>();
+        }
+
+        public static void ConfigureMessagingService(IServiceCollection services, IConfiguration configuration)
+        {
+            var fila = configuration.GetSection("MassTransit")["FilaCreateRegion"] ?? string.Empty;
+            var servidor = configuration.GetSection("MassTransit")["Server"] ?? string.Empty;
+            var usuario = configuration.GetSection("MassTransit")["User"] ?? string.Empty;
+            var senha = configuration.GetSection("MassTransit")["Password"] ?? string.Empty;
+
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(servidor, "/", h =>
+                    {
+                        h.Username(usuario);
+                        h.Password(senha);
+                    });
+
+                    cfg.ConfigureEndpoints(context);
+                });
+            });
+
+            services.AddScoped<IMessagingService, MessagingService>();
         }
     }
 }
