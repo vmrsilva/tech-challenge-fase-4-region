@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TechChallange.Common\TechChallange.Common.csproj" />
     <ProjectReference Include="..\TechChallenge.Region.Api\TechChallenge.Region.Api.csproj" />
     <ProjectReference Include="..\TechChallenge.Region.Infrastructure\TechChallenge.Region.Infrastructure.csproj" />
   </ItemGroup>
