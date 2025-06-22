@@ -59,7 +59,6 @@ namespace TechChallenge.Region.IoC
 
         public static void ConfigureMessagingService(IServiceCollection services, IConfiguration configuration)
         {
-            var fila = configuration.GetSection("MassTransit")["FilaCreateRegion"] ?? string.Empty;
             var servidor = configuration.GetSection("MassTransit")["Server"] ?? string.Empty;
             var usuario = configuration.GetSection("MassTransit")["User"] ?? string.Empty;
             var senha = configuration.GetSection("MassTransit")["Password"] ?? string.Empty;

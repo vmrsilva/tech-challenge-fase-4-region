@@ -118,39 +118,15 @@ namespace TechChallenge.Region.Tests.IntegrationTests.Setup
             services.AddScoped<ICacheRepository, CacheRepository>();
             services.AddScoped<ICacheWrapper, CacheWrapper>();
         }
-
-        //private void ConfigureRabbitMq(IServiceCollection services)
-        //{
-        //    var rabbitMq = services.FirstOrDefault(descriptor => descriptor.ServiceType == typeof(IBus));
-        //    if (rabbitMq != null)
-        //    {
-        //        services.Remove(rabbitMq);
-        //    }
-
-        //    services.AddMassTransit(x =>
-        //    {
-        //        x.UsingRabbitMq((context, cfg) =>
-        //        {
-        //            cfg.Host(_rabbitMqContainer.Hostname, "/", h =>
-        //            {
-        //                h.Username(_rabbitUser);
-        //                h.Password(_rabbitPwd);
-        //            });
-
-        //            cfg.ConfigureEndpoints(context);
-        //        });
-        //    });
-        //}
+    
         private void ConfigureRabbitMq(IServiceCollection services)
         {
-            // Verifica se já existe um IBus registrado (Evita registro duplo)
             var rabbitMq = services.FirstOrDefault(descriptor => descriptor.ServiceType == typeof(IBus));
             if (rabbitMq != null)
             {
                 services.Remove(rabbitMq);
             }
 
-            // Também remove qualquer registro do IBusControl e IBusRegistration
             var descriptorsToRemove = services
                 .Where(d => d.ServiceType.FullName.Contains("MassTransit"))
                 .ToList();
