@@ -41,12 +41,11 @@ namespace TechChallenge.Region.Tests.IntegrationTests.Setup
             _redisContainer = new RedisBuilder().Build();
 
             _rabbitMqContainer = new RabbitMqBuilder()
-                //.WithImage("rabbitmq:3-management")
                 .WithImage("masstransit/rabbitmq:latest")
                 .WithUsername(_rabbitPwd)
                 .WithPassword(_rabbitUser)
-                .WithPortBinding(5672, 5672) // Port padrão do RabbitMQ
-                .WithPortBinding(15672, 15672) // Port padrão do RabbitMQ Management
+                .WithPortBinding(5672, 5672)
+                .WithPortBinding(15672, 15672) // RabbitMQ Management
                 .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5672))
                 .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(15672))
                 .Build();
