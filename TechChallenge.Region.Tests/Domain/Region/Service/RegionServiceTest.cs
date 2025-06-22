@@ -45,6 +45,34 @@ namespace TechChallenge.Region.Tests.Domain.Region.Service
             _regionRepositoryMock.Verify(rr => rr.GetByDddAsync(It.IsAny<string>()), Times.Once);
         }
 
+        [Fact(DisplayName = "Should Check By Ddd Region Exists Return True When Region Exists")]
+        public async Task ShouldCheckByDddRegionExistsAsyncReturnTrueWhenRegionExists()
+        {
+            var mockDdd = "11";
+            var regionMock = new RegionEntity("Test", mockDdd);
+
+            _regionRepositoryMock.Setup(cr => cr.GetByDddAsync(It.IsAny<string>())).ReturnsAsync(regionMock);
+
+            var result = await _regionServiceMock.CheckByDddRegionExistsAsync(mockDdd);
+
+            _regionRepositoryMock.Verify(rr => rr.GetByDddAsync(It.IsAny<string>()), Times.Once);
+            Assert.True(result);
+        }
+
+        [Fact(DisplayName = "Should Check ByDdd Region Exists Return False When Region Does Not Exists")]
+        public async Task ShouldCheckByDddRegionExistsAsyncReturnFalseWhenRegionDoesNotExists()
+        {
+            var mockDdd = "11";
+
+            _regionRepositoryMock.Setup(cr => cr.GetByDddAsync(It.IsAny<string>())).ReturnsAsync((RegionEntity)null);
+
+            var result = await _regionServiceMock.CheckByDddRegionExistsAsync(mockDdd);
+
+            _regionRepositoryMock.Verify(rr => rr.GetByDddAsync(It.IsAny<string>()), Times.Once);
+            Assert.False(result);
+        }
+
+
         [Fact(DisplayName = "Should Delete A Region")]
         public async Task ShouldDeleteARegion()
         {
@@ -201,5 +229,7 @@ namespace TechChallenge.Region.Tests.Domain.Region.Service
 
             Assert.NotNull(result);
         }
+
+
     }
 }

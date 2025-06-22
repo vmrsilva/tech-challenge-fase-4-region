@@ -16,6 +16,16 @@ namespace TechChallenge.Region.Domain.Region.Service
             _cacheRepository = cacheRepository;
         }
 
+        public async Task<bool> CheckByDddRegionExistsAsync(string ddd)
+        {
+            var region = await _regionRepository.GetByDddAsync(ddd).ConfigureAwait(false);
+
+            if (region == null)
+                return false;
+
+            return true;
+        }
+
         public async Task CreateAsync(RegionEntity regionEntity)
         {
             var regionDb = await _regionRepository.GetByDddAsync(regionEntity.Ddd).ConfigureAwait(false);

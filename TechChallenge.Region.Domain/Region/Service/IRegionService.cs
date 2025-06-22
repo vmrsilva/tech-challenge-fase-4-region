@@ -13,5 +13,7 @@ namespace TechChallenge.Region.Domain.Region.Service
         Task UpdateAsync(RegionEntity regionEntity);
         Task<RegionEntity> GetByDddWithContacts(string ddd);
         Task<int> GetCountAsync();
+
+        Task<bool> CheckByDddRegionExistsAsync(string ddd);
     }
 }

@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Configuration;
+using TechChallange.Common.MessagingService;
 using TechChallenge.Region.Api.Controllers.Region.Dto;
 using TechChallenge.Region.Api.Response;
 using TechChallenge.Region.Domain.Region.Entity;
@@ -14,12 +16,18 @@ namespace TechChallenge.Region.Api.Controllers.Region.Http
     {
         private readonly IRegionService _regionService;
         private readonly IMapper _mapper;
+        private readonly IMessagingService _messagingService;
+        private readonly IConfiguration _configuration;
 
         public RegionController(IRegionService regionService,
-                                IMapper mapper)
+                                IMapper mapper,
+                                IMessagingService messagingService,
+                                IConfiguration configuration)
         {
             _regionService = regionService;
             _mapper = mapper;
+            _messagingService = messagingService;
+            _configuration = configuration;
         }
 
         [HttpPost]
@@ -27,10 +35,25 @@ namespace TechChallenge.Region.Api.Controllers.Region.Http
         {
             try
             {
-                var regionEntity = _mapper.Map<RegionEntity>(regionDto);
-                await _regionService.CreateAsync(regionEntity).ConfigureAwait(false);
+                var regionExists = await _regionService.CheckByDddRegionExistsAsync(regionDto.Ddd).ConfigureAwait(false);
 
-                return StatusCode(204, new BaseResponse
+                if (regionExists)
+                    throw new RegionAlreadyExistsException();
+
+                var regionEntity = _mapper.Map<RegionEntity>(regionDto);
+
+                var queueName = _configuration.GetSection("MassTransit")["QueueCreateRegion"] ?? string.Empty;
+
+                var messageSent = await _messagingService.SendMessage(queueName, regionEntity).ConfigureAwait(false);
+
+                if (!messageSent)
+                    return StatusCode(StatusCodes.Status400BadRequest, new BaseResponse
+                    {
+                        Success = true,
+                        Error = string.Empty
+                    });
+
+                return StatusCode(StatusCodes.Status201Created, new BaseResponse
                 {
                     Success = true,
                     Error = string.Empty
