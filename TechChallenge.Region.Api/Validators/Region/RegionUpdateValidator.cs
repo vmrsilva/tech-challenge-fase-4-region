@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using TechChallenge.Region.Api.Controllers.Region.Dto;
+using TechChallange.Region.Api.Controllers.Region.Dto;
 
-namespace TechChallenge.Region.Api.Validators.Region
+namespace TechChallange.Region.Api.Validators.Region
 {
     public class RegionUpdateValidator : AbstractValidator<RegionUpdateDto>
     {

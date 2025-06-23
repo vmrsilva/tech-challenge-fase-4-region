@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TechChallenge.Region.Domain.Region.Entity;
+using TechChallange.Region.Domain.Region.Entity;
 
-namespace TechChallenge.Region.Infrastructure.Context
+namespace TechChallange.Region.Infrastructure.Context
 {
     public class TechChallangeContext : DbContext
     {

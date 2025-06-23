@@ -1,9 +1,9 @@
-﻿using TechChallenge.Region.Domain.Cache;
-using TechChallenge.Region.Domain.Region.Entity;
-using TechChallenge.Region.Domain.Region.Exception;
-using TechChallenge.Region.Domain.Region.Repository;
+﻿using TechChallange.Region.Domain.Cache;
+using TechChallange.Region.Domain.Region.Entity;
+using TechChallange.Region.Domain.Region.Exception;
+using TechChallange.Region.Domain.Region.Repository;
 
-namespace TechChallenge.Region.Domain.Region.Service
+namespace TechChallange.Region.Domain.Region.Service
 {
     public class RegionService : IRegionService
     {

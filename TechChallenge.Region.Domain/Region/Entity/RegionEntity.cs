@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using TechChallenge.Region.Domain.Base.Entity;
+using TechChallange.Region.Domain.Base.Entity;
 
-namespace TechChallenge.Region.Domain.Region.Entity
+namespace TechChallange.Region.Domain.Region.Entity
 {
     public class RegionEntity : BaseEntity
     {

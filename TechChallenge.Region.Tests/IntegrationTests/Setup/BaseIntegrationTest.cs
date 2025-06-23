@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Text.Json;
-using TechChallenge.Region.Domain.Region.Service;
-using TechChallenge.Region.Infrastructure.Context;
+using TechChallange.Region.Domain.Region.Service;
+using TechChallange.Region.Infrastructure.Context;
 
-namespace TechChallenge.Region.Tests.IntegrationTests.Setup
+namespace TechChallange.Region.Tests.IntegrationTests.Setup
 {
     public class BaseIntegrationTest : IClassFixture<TechChallangeApplicationFactory>, IDisposable
     {

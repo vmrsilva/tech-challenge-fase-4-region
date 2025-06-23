@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TechChallenge.Region.Infrastructure.Context;
+using TechChallange.Region.Infrastructure.Context;
 
 #nullable disable
 
-namespace TechChallenge.Region.Infrastructure.Migrations
+namespace TechChallange.Region.Infrastructure.Migrations
 {
     [DbContext(typeof(TechChallangeContext))]
     partial class TechChallangeContextModelSnapshot : ModelSnapshot

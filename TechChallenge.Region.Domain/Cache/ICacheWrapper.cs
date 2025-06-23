@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
 
-namespace TechChallenge.Region.Domain.Cache
+namespace TechChallange.Region.Domain.Cache
 {
     public interface ICacheWrapper
     {

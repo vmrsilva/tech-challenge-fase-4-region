@@ -2,11 +2,11 @@
 using System.Net;
 using System.Text.Json;
 using System.Text;
-using TechChallenge.Region.Api.Controllers.Region.Dto;
-using TechChallenge.Region.Api.Response;
-using TechChallenge.Region.Tests.IntegrationTests.Setup;
+using TechChallange.Region.Api.Controllers.Region.Dto;
+using TechChallange.Region.Api.Response;
+using TechChallange.Region.Tests.IntegrationTests.Setup;
 
-namespace TechChallenge.Region.Tests.IntegrationTests.Controllers
+namespace TechChallange.Region.Tests.IntegrationTests.Controllers
 {
     public class RegionControllerTests(TechChallangeApplicationFactory techChallangeApplicationFactory) : BaseIntegrationTest(techChallangeApplicationFactory)
     {

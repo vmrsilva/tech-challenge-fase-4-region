@@ -3,16 +3,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TechChallange.Common.MessagingService;
-using TechChallenge.Region.Domain.Base.Repository;
-using TechChallenge.Region.Domain.Cache;
-using TechChallenge.Region.Domain.Region.Repository;
-using TechChallenge.Region.Domain.Region.Service;
-using TechChallenge.Region.Infrastructure.Cache;
-using TechChallenge.Region.Infrastructure.Context;
-using TechChallenge.Region.Infrastructure.Repository.Base;
-using TechChallenge.Region.Infrastructure.Repository.Region;
+using TechChallange.Region.Domain.Base.Repository;
+using TechChallange.Region.Domain.Cache;
+using TechChallange.Region.Domain.Region.Messaging;
+using TechChallange.Region.Domain.Region.Repository;
+using TechChallange.Region.Domain.Region.Service;
+using TechChallange.Region.Infrastructure.Cache;
+using TechChallange.Region.Infrastructure.Context;
+using TechChallange.Region.Infrastructure.Repository.Base;
+using TechChallange.Region.Infrastructure.Repository.Region;
 
-namespace TechChallenge.Region.IoC
+namespace TechChallange.Region.IoC
 {
     public static class DomainInjection
     {
@@ -71,6 +72,12 @@ namespace TechChallenge.Region.IoC
                     {
                         h.Username(usuario);
                         h.Password(senha);
+                    });
+
+                    // Configurar o nome da exchange para RegionCreateDto
+                    cfg.Message<RegionCreateMessageDto>(m =>
+                    {
+                        m.SetEntityName("region-insert-exchange"); // Define o nome personalizado da exchange
                     });
 
                     cfg.ConfigureEndpoints(context);

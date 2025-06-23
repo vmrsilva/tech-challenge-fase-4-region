@@ -6,15 +6,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.InteropServices;
-using TechChallenge.Region.Domain.Cache;
-using TechChallenge.Region.Domain.Region.Entity;
-using TechChallenge.Region.Infrastructure.Cache;
-using TechChallenge.Region.Infrastructure.Context;
+using TechChallange.Region.Domain.Cache;
+using TechChallange.Region.Domain.Region.Entity;
+using TechChallange.Region.Infrastructure.Cache;
+using TechChallange.Region.Infrastructure.Context;
 using Testcontainers.MsSql;
 using Testcontainers.RabbitMq;
 using Testcontainers.Redis;
 
-namespace TechChallenge.Region.Tests.IntegrationTests.Setup
+namespace TechChallange.Region.Tests.IntegrationTests.Setup
 {
     public class TechChallangeApplicationFactory : WebApplicationFactory<Program>, IAsyncLifetime
     {

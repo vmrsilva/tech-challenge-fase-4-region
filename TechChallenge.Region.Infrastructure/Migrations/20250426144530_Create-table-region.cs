@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace TechChallenge.Region.Infrastructure.Migrations
+namespace TechChallange.Region.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class Createtableregion : Migration
