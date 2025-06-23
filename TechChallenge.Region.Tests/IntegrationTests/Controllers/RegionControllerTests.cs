@@ -76,7 +76,7 @@ namespace TechChallange.Region.Tests.IntegrationTests.Controllers
         [Fact(DisplayName = "Should Delete Logically Region By Id With Success")]
         public async Task ShouldDeleteLogicallyRegionByIdWithSuccess()
         {
-            var regionEntity = await _dbContext.Region.FirstOrDefaultAsync(r => r.Ddd == "11");
+            var regionEntity = await _dbContext.Region.FirstOrDefaultAsync(r => r.Ddd == "99");
 
             var client = techChallangeApplicationFactory.CreateClient();
 

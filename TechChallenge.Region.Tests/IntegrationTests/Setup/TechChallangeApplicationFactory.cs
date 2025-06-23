@@ -172,8 +172,10 @@ namespace TechChallange.Region.Tests.IntegrationTests.Setup
         {
             var regionOne = new RegionEntity("SP", "11");
             var regionTow = new RegionEntity("SC", "47");
+            var regionThree = new RegionEntity("TS", "99");
 
-            context.Region.AddRange(regionOne, regionTow);
+
+            context.Region.AddRange(regionOne, regionTow, regionThree);
 
             context.SaveChanges();
         }
