@@ -177,11 +177,11 @@ namespace TechChallange.Region.Api.Controllers.Region.Http
                     Success = false
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(400, new BaseResponse
                 {
-                    Error = "Ocorreu um erro!",
+                    Error = "Ocorreu um erro! " + ex.Message,
                     Success = false
                 });
             }
