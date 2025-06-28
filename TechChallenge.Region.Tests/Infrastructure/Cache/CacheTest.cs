@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
 using Moq;
 using Newtonsoft.Json;
-using TechChallenge.Region.Domain.Cache;
-using TechChallenge.Region.Domain.Region.Entity;
-using TechChallenge.Region.Infrastructure.Cache;
+using TechChallange.Region.Domain.Cache;
+using TechChallange.Region.Domain.Region.Entity;
+using TechChallange.Region.Infrastructure.Cache;
 
-namespace TechChallenge.Region.Tests.Infrastructure.Cache
+namespace TechChallange.Region.Tests.Infrastructure.Cache
 {
     public class CacheTest
     {

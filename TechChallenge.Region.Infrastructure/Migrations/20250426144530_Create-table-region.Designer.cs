@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TechChallenge.Region.Infrastructure.Context;
+using TechChallange.Region.Infrastructure.Context;
 
 #nullable disable
 
-namespace TechChallenge.Region.Infrastructure.Migrations
+namespace TechChallange.Region.Infrastructure.Migrations
 {
     [DbContext(typeof(TechChallangeContext))]
     [Migration("20250426144530_Create-table-region")]

@@ -1,4 +1,4 @@
-﻿namespace TechChallenge.Region.Api.Controllers.Region.Dto
+﻿namespace TechChallange.Region.Api.Controllers.Region.Dto
 {
     public record RegionUpdateDto
     {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using TechChallenge.Region.Api.Controllers.Region.Dto;
-using TechChallenge.Region.Domain.Region.Entity;
+using TechChallange.Region.Api.Controllers.Region.Dto;
+using TechChallange.Region.Domain.Region.Entity;
 
-namespace TechChallenge.Region.Api.Mapper
+namespace TechChallange.Region.Api.Mapper
 {
     public class MappingProfile : Profile
     {

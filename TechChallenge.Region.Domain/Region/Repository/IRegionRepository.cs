@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
-using TechChallenge.Region.Domain.Region.Entity;
+using TechChallange.Region.Domain.Region.Entity;
 
-namespace TechChallenge.Region.Domain.Region.Repository
+namespace TechChallange.Region.Domain.Region.Repository
 {
     public interface IRegionRepository
     {

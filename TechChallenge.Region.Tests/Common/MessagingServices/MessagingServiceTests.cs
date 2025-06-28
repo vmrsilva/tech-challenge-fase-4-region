@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Moq;
 using TechChallange.Common.MessagingService;
 
-namespace TechChallenge.Region.Tests.Common.MessagingServices
+namespace TechChallange.Region.Tests.Common.MessagingServices
 {
     public class MessagingServiceTests
     {

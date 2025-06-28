@@ -23,6 +23,8 @@ namespace TechChallange.Common.MessagingService
 
                 await endpoint.Send(message);
 
+               
+
                 return true;
             }
             catch

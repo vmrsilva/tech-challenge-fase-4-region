@@ -1,9 +1,9 @@
 ﻿using System.Linq.Expressions;
-using TechChallenge.Region.Domain.Base.Repository;
-using TechChallenge.Region.Domain.Region.Entity;
-using TechChallenge.Region.Domain.Region.Repository;
+using TechChallange.Region.Domain.Base.Repository;
+using TechChallange.Region.Domain.Region.Entity;
+using TechChallange.Region.Domain.Region.Repository;
 
-namespace TechChallenge.Region.Infrastructure.Repository.Region
+namespace TechChallange.Region.Infrastructure.Repository.Region
 {
     public class RegionRepository : IRegionRepository
     {

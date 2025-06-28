@@ -1,4 +1,4 @@
-﻿namespace TechChallenge.Region.Api.Response
+﻿namespace TechChallange.Region.Api.Response
 {
     public record BaseResponseDto<T> : BaseResponse
     {

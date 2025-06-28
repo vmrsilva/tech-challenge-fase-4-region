@@ -1,4 +1,4 @@
-﻿namespace TechChallenge.Region.Domain.Region.Exception
+﻿namespace TechChallange.Region.Domain.Region.Exception
 {
     public class RegionAlreadyExistsException : System.Exception
     {

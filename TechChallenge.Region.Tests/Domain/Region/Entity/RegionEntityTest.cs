@@ -1,9 +1,9 @@
 ﻿using AutoFixture;
 using AutoMapper;
-using TechChallenge.Region.Api.Controllers.Region.Dto;
-using TechChallenge.Region.Domain.Region.Entity;
+using TechChallange.Region.Api.Controllers.Region.Dto;
+using TechChallange.Region.Domain.Region.Entity;
 
-namespace TechChallenge.Region.Tests.Domain.Region.Entity
+namespace TechChallange.Region.Tests.Domain.Region.Entity
 {
     public class RegionEntityTest
     {

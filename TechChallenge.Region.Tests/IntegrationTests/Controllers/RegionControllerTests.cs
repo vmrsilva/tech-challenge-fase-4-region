@@ -2,11 +2,11 @@
 using System.Net;
 using System.Text.Json;
 using System.Text;
-using TechChallenge.Region.Api.Controllers.Region.Dto;
-using TechChallenge.Region.Api.Response;
-using TechChallenge.Region.Tests.IntegrationTests.Setup;
+using TechChallange.Region.Api.Controllers.Region.Dto;
+using TechChallange.Region.Api.Response;
+using TechChallange.Region.Tests.IntegrationTests.Setup;
 
-namespace TechChallenge.Region.Tests.IntegrationTests.Controllers
+namespace TechChallange.Region.Tests.IntegrationTests.Controllers
 {
     public class RegionControllerTests(TechChallangeApplicationFactory techChallangeApplicationFactory) : BaseIntegrationTest(techChallangeApplicationFactory)
     {
@@ -76,7 +76,7 @@ namespace TechChallenge.Region.Tests.IntegrationTests.Controllers
         [Fact(DisplayName = "Should Delete Logically Region By Id With Success")]
         public async Task ShouldDeleteLogicallyRegionByIdWithSuccess()
         {
-            var regionEntity = await _dbContext.Region.FirstOrDefaultAsync(r => r.Ddd == "11");
+            var regionEntity = await _dbContext.Region.FirstOrDefaultAsync(r => r.Ddd == "99");
 
             var client = techChallangeApplicationFactory.CreateClient();
 

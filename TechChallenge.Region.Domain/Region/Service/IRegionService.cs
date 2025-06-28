@@ -1,6 +1,6 @@
-﻿using TechChallenge.Region.Domain.Region.Entity;
+﻿using TechChallange.Region.Domain.Region.Entity;
 
-namespace TechChallenge.Region.Domain.Region.Service
+namespace TechChallange.Region.Domain.Region.Service
 {
     public interface IRegionService
     {

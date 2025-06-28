@@ -1,12 +1,12 @@
 ﻿using Moq;
 using System.Linq.Expressions;
-using TechChallenge.Region.Domain.Cache;
-using TechChallenge.Region.Domain.Region.Entity;
-using TechChallenge.Region.Domain.Region.Exception;
-using TechChallenge.Region.Domain.Region.Repository;
-using TechChallenge.Region.Domain.Region.Service;
+using TechChallange.Region.Domain.Cache;
+using TechChallange.Region.Domain.Region.Entity;
+using TechChallange.Region.Domain.Region.Exception;
+using TechChallange.Region.Domain.Region.Repository;
+using TechChallange.Region.Domain.Region.Service;
 
-namespace TechChallenge.Region.Tests.Domain.Region.Service
+namespace TechChallange.Region.Tests.Domain.Region.Service
 {
     public class RegionServiceTest
     {

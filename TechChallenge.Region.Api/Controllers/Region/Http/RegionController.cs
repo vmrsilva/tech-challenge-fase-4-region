@@ -2,13 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Configuration;
 using TechChallange.Common.MessagingService;
-using TechChallenge.Region.Api.Controllers.Region.Dto;
-using TechChallenge.Region.Api.Response;
-using TechChallenge.Region.Domain.Region.Entity;
-using TechChallenge.Region.Domain.Region.Exception;
-using TechChallenge.Region.Domain.Region.Service;
+using TechChallange.Region.Api.Controllers.Region.Dto;
+using TechChallange.Region.Api.Response;
+using TechChallange.Region.Domain.Region.Entity;
+using TechChallange.Region.Domain.Region.Exception;
+using TechChallange.Region.Domain.Region.Messaging;
+using TechChallange.Region.Domain.Region.Service;
 
-namespace TechChallenge.Region.Api.Controllers.Region.Http
+namespace TechChallange.Region.Api.Controllers.Region.Http
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -40,11 +41,11 @@ namespace TechChallenge.Region.Api.Controllers.Region.Http
                 if (regionExists)
                     throw new RegionAlreadyExistsException();
 
-                var regionEntity = _mapper.Map<RegionEntity>(regionDto);
+                //var regionEntity = _mapper.Map<RegionEntity>(regionDto);
 
                 var queueName = _configuration.GetSection("MassTransit")["QueueCreateRegion"] ?? string.Empty;
 
-                var messageSent = await _messagingService.SendMessage(queueName, regionEntity).ConfigureAwait(false);
+                var messageSent = await _messagingService.SendMessage(queueName, new RegionCreateMessageDto { Ddd = regionDto.Ddd, Name = regionDto.Name }).ConfigureAwait(false);
 
                 if (!messageSent)
                     return StatusCode(StatusCodes.Status400BadRequest, new BaseResponse
