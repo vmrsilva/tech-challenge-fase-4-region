@@ -33,7 +33,7 @@ namespace TechChallange.Region.IoC
             using (var serviceProvider = services.BuildServiceProvider())
             {
                 var dbContext = serviceProvider.GetRequiredService<TechChallangeContext>();
-                 dbContext.Database.Migrate();
+                // dbContext.Database.Migrate();
             }
         }
 
